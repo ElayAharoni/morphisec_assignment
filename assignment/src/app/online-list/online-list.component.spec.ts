@@ -1,21 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainComponentComponent } from './main-component.component';
+import { OnlineListComponent } from './online-list.component';
 
-
-describe('MainComponentComponent', () => {
-  let component: MainComponentComponent;
-  let fixture: ComponentFixture<MainComponentComponent>;
+describe('OnlineListComponent', () => {
+  let component: OnlineListComponent;
+  let fixture: ComponentFixture<OnlineListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainComponentComponent]
+      declarations: [ OnlineListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainComponentComponent);
+    fixture = TestBed.createComponent(OnlineListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
