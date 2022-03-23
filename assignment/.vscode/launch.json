@@ -3,6 +3,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Launch MorphisecAssignmentApplication",
+      "request": "launch",
+      "mainClass": "com.example.morphisecAssignment.MorphisecAssignmentApplication",
+      "projectName": "morphisecAssignment"
+    },
+    {
       "name": "ng serve",
       "type": "pwa-chrome",
       "request": "launch",

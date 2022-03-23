@@ -9,11 +9,12 @@ import javax.persistence.Table;
 @Entity
 @Table
 public class User {
-    
+
     public static int numOfUsers;
 
     @Id
-    private final int _id;
+    @Column
+    private final String _email;
 
     @Column
     private final LocalDateTime _registerTime;
@@ -25,18 +26,11 @@ public class User {
     private boolean isOnline;
     
 
-    public User(){
-        this._id = numOfUsers;
-        numOfUsers++;
-        this._registerTime = LocalDateTime.now();
-    }
-
-    public User(String userName){
-        this._userName = userName;
+    public User(String email){
+        this._email = email;
         this._registerTime = LocalDateTime.now();
         this._loginCount = 1;
         this.isOnline = true;
-        this._id = numOfUsers;
         numOfUsers++;
     }
 
@@ -44,8 +38,8 @@ public class User {
         return numOfUsers;
     }
 
-    public int getId(){
-        return this._id;
+    public String getEmail(){
+        return this._email;
     }
 
     public LocalDateTime getRegisterTime(){
