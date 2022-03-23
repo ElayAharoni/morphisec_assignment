@@ -15,7 +15,5 @@ export class LoginComponentComponent implements OnInit {
   }
   onClick(): void {
     this.router.navigate([`/main`]);
-    const element = document.getElementById("loginForm");
-    element!.remove();
   }
 }
