@@ -10,31 +10,28 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;  
 
 
-
-
-
 @RestController
 public class UsersController {
     @Autowired
-    UserService userService;
+    private static final UserService userService = new UserService();
     
     @GetMapping("/User")
-    private List<User> getAllUsers(){
+    public List<User> getAllUsers(){
         return userService.getAllUsers();
     }
 
     @GetMapping("/User/{email}")
-    private User getUser(@PathVariable("email") String email){
+    public User getUser(@PathVariable("email") String email){
         return userService.getUserByEmail(email);
     }
 
     @DeleteMapping("/User/{emai}")
-    private void deleteUser(@PathVariable("email")String email){
+    public void deleteUser(@PathVariable("email")String email){
         userService.delete(email);
     }
 
     @PostMapping("/User")
-    private String saveUser(@RequestBody User user){
+    public String saveUser(@RequestBody User user){
         userService.saveOrUpdate(user);
         return user.getEmail();
     }
